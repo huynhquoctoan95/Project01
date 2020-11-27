@@ -1,0 +1,28 @@
+@mixin custom-scrollbar {
+    &::-webkit-scrollbar{
+        width: 4px;
+    }
+    &::-webkit-scrollbar-track{
+        background-color: $black-cl;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: #2b2b2b;
+    }
+}
+
+@mixin  mid-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@mixin  mid-flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@mixin mid-position {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
