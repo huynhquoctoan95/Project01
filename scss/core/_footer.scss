@@ -1,0 +1,21 @@
+footer{
+    background-color: $black-cl;
+    height: 57px;
+    color: $white-cl;
+  
+    .container{
+        height: 100%;
+        .footer-content{
+            position: relative;
+            height:  100%;
+            @include mid-flex;
+             a:first-child{
+                @include mid-position;
+            }
+            .backtotop{
+                text-transform: uppercase;
+                color: $white-cl;
+            }
+        }
+    }
+}

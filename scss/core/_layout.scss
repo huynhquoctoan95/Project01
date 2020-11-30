@@ -5,6 +5,7 @@ html,body {
     background-color: $white-cl;
     position: relative;
     font-family: 'PR',Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
     @include custom-scrollbar();
     .mainwrapper{
         width: 100%;
@@ -16,6 +17,9 @@ html,body {
 }
 .pd{
     padding-top: $pdSection;
+}
+.image{
+    width: $img;
 }
 .textbox{
     @include mid-flex-column;
@@ -41,6 +45,9 @@ html,body {
     &.-yellow{
             text-transform: uppercase;
             color: $yellow-cl;
+            &::before{
+                display: none;
+            }
         }
     }
     .description{
@@ -109,6 +116,21 @@ html,body {
         padding: 50px 0 65px 0;
     }
 }
+&.gallery__text{
+    .titlemain{
+        &::before{
+            display: none;
+        }
+    }
+    .--white{
+        color: $white-cl;
+    }
+}
+.--new{
+    &::before{
+        display:none ;
+    }
+}
 }
 .btnctr{
     transition: background-color;
@@ -153,46 +175,53 @@ html,body {
         transition: all;
         transition-duration: $t;
         transition-timing-function: cubic-bezier(.17,1.13,.96,.12);
-        z-index: -1;
+        // z-index: -1;
     }
     &:hover{
-        span{color: $black-cl;}
+        span{color: $black-cl;
+        z-index: 100;}
         &::before{
-        height: 600%;
-        width: 100%;
-        transform: translate(-50%, -50%)  rotate(90deg) ;
+        height: 10000%;
+        width: 20%;
+        transform: translate(-50%, -50%)  rotate(270deg) ;
         }
     }
-};
-.container-fluid{
-    padding-left: 15px;
-    padding-right: 15px;
-}
-.container {
-    max-width: $container-width;
-    margin:  0 auto;
-}
+    &.btn-video{
+        position: relative;
+        svg{
+            path{      
+                transition: fill;
+                transition-duration: 1.5s;
+            }
+        }
+        &::before{
+            content: "";
+            width:250px;
+            height: 50px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform: scale(0);
+            transform-origin: right bottom ;
+            transition: transform, background-color;
+            transition-duration: $t;
+        }
+        &:hover{
+            span{
+                color: $black-cl;
+            }
+            svg{
+                z-index: 1000;
+                path{
+                    fill: $black-cl;
+                }
+            }
+            &::before{
 
-// Mobile 
-@media (max-width:739px) {
-    .container{
-        max-width: 100%;
-    }
-}
-// Tablet 
-@media (min-width:740px) and (max-width:1023px){
-    .container{
-        max-width: 644px;
-    }
-}
-// Mobile and Tablet  
-@media (max-width :1023px){
-
-}
-
-//Laptop 
-@media (min-width : 1024px) and (max-width : 1239px){
-    .container{
-        max-width: 984px;
+                transform: scale(1);
+                transform-origin: left top ;
+                background-color: $yellow-cl;
+            }
+        }
     }
 }
