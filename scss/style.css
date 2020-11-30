@@ -1170,6 +1170,17 @@ header .container-fluid .header .lang:hover .lang__option {
           transition-duration: 2s;
   width: 100%;
   height: auto;
+  -webkit-transition: -webkit-transform;
+  transition: -webkit-transform;
+  transition: transform;
+  transition: transform, -webkit-transform;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+}
+
+.homepage .news .news__list .news__list-item .img:hover img {
+  -webkit-transform: rotateY(360deg);
+          transform: rotateY(360deg);
 }
 
 .homepage .news .news__list .news__list-item .text {

@@ -302,7 +302,14 @@
                         transition: transform, filter;
                         transition-duration: 2s;
                         width: 100%;
-                        height: auto;}
+                        height: auto;
+                        transition: transform;
+                        transition-duration: 1s;}
+                &:hover{
+                    img{
+                        transform: rotateY(360deg);
+                    }
+                }
                     
                 }
                 .text{
