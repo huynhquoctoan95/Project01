@@ -60,7 +60,7 @@ html,body {
     }
     }
     .btmain{
-        @include mid-flex
+        @include mid-flex;
         span{
             font-size: $fz-text;
             color: $black-cl;

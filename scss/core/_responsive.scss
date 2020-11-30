@@ -232,13 +232,12 @@
             }
         }
     }
-    
-}
-footer{height: 100px;
-    .container{
-        .footer-content{
-            @include mid-flex-column;
-            justify-content: space-evenly;
+    footer{height: 100px;
+        .container{
+            .footer-content{
+                @include mid-flex-column;
+                justify-content: space-evenly;
+            }
         }
     }
 }
